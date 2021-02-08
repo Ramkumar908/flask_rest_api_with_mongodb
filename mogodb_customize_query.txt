@@ -1,0 +1,18 @@
+> db.demo.find({Likes:{$gt:50}})
+{ "_id" : ObjectId("601c020d12222d8dd2a3c77e"), "title" : "First Table", "Name" : "Ram kumar", "Likes" : 100 }
+> db.demo.find({Likes:{$gt:50},Name:"Ram kumar"})
+{ "_id" : ObjectId("601c020d12222d8dd2a3c77e"), "title" : "First Table", "Name" : "Ram kumar", "Likes" : 100 }
+> db.demo.find({Likes:{$gt:50},Name:"Ram kumara"})
+> db.demo.find({Likes:{$gt:50},Name:"Ram kumar"})
+{ "_id" : ObjectId("601c020d12222d8dd2a3c77e"), "title" : "First Table", "Name" : "Ram kumar", "Likes" : 100 }
+> db.demo.find({$or:[{Name:"Ram kumar"},{Likes:200}]}
+... ^C
+
+> db.demo.find({$or:[{Name:"Ram kumar"},{Likes:200}]})
+{ "_id" : ObjectId("601c020d12222d8dd2a3c77e"), "title" : "First Table", "Name" : "Ram kumar", "Likes" : 100 }
+> db.demo.find({$or:[{Name:"Ram kumar"},{Likes:{$lt:200}}]})
+{ "_id" : ObjectId("601c020d12222d8dd2a3c77e"), "title" : "First Table", "Name" : "Ram kumar", "Likes" : 100 }
+> db.demo.find({$or:[{Name:"Rama kumar"},{Likes:{$gt:200}}]})
+> db.demo.find({$or:[{Name:"Rama kumar"},{Likes:{$gte:100}}]})
+{ "_id" : ObjectId("601c020d12222d8dd2a3c77e"), "title" : "First Table", "Name" : "Ram kumar", "Likes" : 100 }
+> db.demo.find({$or:[{Name:"Rama kumar"},{Likes:{$gte:100}}]})
